@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ProyectoFinal.Models.Pais>
+
+@{
+    ViewData["Title"] = "Paises";
+}
+
+
+<img src="~/images/bannerpais.gif" />
+<center><h3>LISTA DE PAISES</h3></center>
+
+<p>
+    <a asp-action="Create">Nuevo Pais</a>
+    
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Imagen)
+                </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                <img src="@item.Imagen" height="50" width="100px"/>
+                
+              
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Detalles</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

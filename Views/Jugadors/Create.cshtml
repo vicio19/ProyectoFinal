@@ -1,0 +1,154 @@
+﻿@model ProyectoFinal.Models.Jugador
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>AGREGAR JUGADOR</h2>
+
+
+<hr />
+<div class="row">
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="PaisID" class="control-label">Seleccionar Pais</label>
+            <select asp-for="PaisID" class="form-control" asp-items="ViewBag.PaisID"></select>
+        </div>
+        <div class="col-md-4">
+            <h3>Datos Personales</h3>
+            <hr />
+            <div class="form-group">
+                <label asp-for="Nombres" class="control-label"></label>
+                <input asp-for="Nombres" class="form-control" />
+                <span asp-validation-for="Nombres" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido_p" class="control-label">Apellido Paterno</label>
+                <input asp-for="Apellido_p" class="form-control" />
+                <span asp-validation-for="Apellido_p" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Apellido_M" class="control-label">Apellido Materno</label>
+                <input asp-for="Apellido_M" class="form-control" />
+                <span asp-validation-for="Apellido_M" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Lugar_Nac" class="control-label">Lugar de Nacimiento</label>
+                <input asp-for="Lugar_Nac" class="form-control" />
+                <span asp-validation-for="Lugar_Nac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fecha_Nac" class="control-label">Fecha de Nacimiento</label>
+                <input type="date" name="Fecha_Nac" />
+                @*<input asp-for="Fecha_Nac" class="form-control" />*@
+                <span asp-validation-for="Fecha_Nac" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Altura" class="control-label"></label>
+                <input asp-for="Altura" class="form-control" />
+                <span asp-validation-for="Altura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Peso" class="control-label"></label>
+                <input asp-for="Peso" class="form-control" />
+                <span asp-validation-for="Peso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Club" class="control-label"></label>
+                <input asp-for="Club" class="form-control" />
+                <span asp-validation-for="Club" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Foto" class="control-label"></label>
+                @*<input asp-for="Foto" class="form-control" />*@
+                <input type="file" name="file" id="file" />
+                <span asp-validation-for="Foto" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h3>Cualidades Fisicas</h3>
+            <hr />
+            <div class="form-group">
+                <label asp-for="Condicion" class="control-label">Condicion (1-100)</label>
+                <input asp-for="Condicion" class="form-control" />
+                <span asp-validation-for="Condicion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fuerza" class="control-label">Fuera (1-100)</label>
+                <input asp-for="Fuerza" class="form-control" />
+                <span asp-validation-for="Fuerza" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Velocidad" class="control-label">Velocidad (1-100)</label>
+                <input asp-for="Velocidad" class="form-control" />
+                <span asp-validation-for="Velocidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reacción" class="control-label">Reaccion (1-100)</label>
+                <input asp-for="Reacción" class="form-control" />
+                <span asp-validation-for="Reacción" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h3>Tecnica</h3>
+            <hr />
+            <div class="form-group">
+                <label asp-for="Control_de_Balon" class="control-label">Control del Balon (1-100)</label>
+                <input asp-for="Control_de_Balon" class="form-control" />
+                <span asp-validation-for="Control_de_Balon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Anotacion" class="control-label">Anotacion (1-100)</label>
+                <input asp-for="Anotacion" class="form-control" />
+                <span asp-validation-for="Anotacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Barrida" class="control-label">Barrida (1-100)</label>
+                <input asp-for="Barrida" class="form-control" />
+                <span asp-validation-for="Barrida" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Centros" class="control-label">Centros (1-100)</label>
+                <input asp-for="Centros" class="form-control" />
+                <span asp-validation-for="Centros" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Defensa" class="control-label">Defensa (1-100)</label>
+                <input asp-for="Defensa" class="form-control" />
+                <span asp-validation-for="Defensa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Marcaje" class="control-label">Marcaje (1-100)</label>
+                <input asp-for="Marcaje" class="form-control" />
+                <span asp-validation-for="Marcaje" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carcateristica1" class="control-label"></label>
+                <input asp-for="Carcateristica1" class="form-control" />
+                <span asp-validation-for="Carcateristica1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Carcateristica2" class="control-label"></label>
+                <input asp-for="Carcateristica2" class="form-control" />
+                <span asp-validation-for="Carcateristica2" class="text-danger"></span>
+            </div>
+
+
+        </div>
+        <div style="clear: both"></div>
+        <div class="form-group">
+            <input type="submit" value="Crear Jugador" class="btn btn-default" style="margin-left:15px" />
+        </div>
+    </form>
+</div>
+
+    <div>
+        <a asp-action="Index">Volver a la Lista</a>
+    </div>
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

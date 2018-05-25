@@ -1,0 +1,39 @@
+﻿@model ProyectoFinal.Models.Pais
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+<h3>Esta seguro que desea eliminar este Pais?</h3>
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Imagen)
+        </dt>
+        <dd>
+            <img src="@Model.Imagen" style="height:100px">
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ID" />
+        <input type="submit" value="Eliminar" class="btn btn-default" /> 
+
+
+       
+    </form>
+</div>
+<br />
+<div>
+    <a asp-action="Index">Volver a la Lista</a>
+</div>

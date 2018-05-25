@@ -1,0 +1,31 @@
+﻿@model ProyectoFinal.Models.Pais
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detalles del Pais</h2>
+
+<div>
+   
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Imagen)
+        </dt>
+        <dd>
+            <img src="@Model.Imagen" style="height:100px">
+           
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ID">Editar</a> |
+    <a asp-action="Index">Volver a la Lista</a>
+</div>

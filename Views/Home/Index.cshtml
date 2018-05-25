@@ -1,0 +1,33 @@
+﻿
+
+@model IEnumerable<ProyectoFinal.Models.Pais>
+
+@{
+    ViewData["Title"] = "Pagina de Inicio";
+}
+
+
+
+<center><h3>LISTA DE PAISES</h3></center>
+<br />
+
+
+    
+   
+            @foreach (var item in Model)
+            {
+
+                <div style="float:left; margin: 10px 15px 10px 15px; ">
+                    <img src="@item.Imagen"  style="height:200px; cursor:pointer" onclick="location.href='@Url.Action("Ijugadores", "Home")?idPais=@item.ID'" />
+                    <br />
+                    @Html.DisplayFor(modelItem => item.Nombre)
+
+                </div>
+
+
+                
+
+
+            }
+
+            <div style="clear:both"></div>

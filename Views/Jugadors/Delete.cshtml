@@ -1,0 +1,171 @@
+﻿@model ProyectoFinal.Models.Jugador
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+
+<h3>Esta seguro que desea Eliminar este Jugador?</h3>
+<div class="row">
+    <div class="col-md-6">
+        <h3>Datos Personales</h3>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Pais)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Pais.Nombre)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Nombres)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Nombres)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Apellido_p)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Apellido_p)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Apellido_M)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Apellido_M)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Lugar_Nac)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Lugar_Nac)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Fecha_Nac)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Fecha_Nac)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Altura)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Altura)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Peso)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Peso)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Club)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Club)
+            </dd>
+            <h3>Cualidades Fisicas</h3>
+            <hr />
+            <dt>
+                @Html.DisplayNameFor(model => model.Condicion)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Condicion)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Fuerza)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Fuerza)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Velocidad)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Velocidad)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Reacción)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Reacción)
+            </dd>
+            <h3>Tecnica</h3>
+            <hr />
+            <dt>
+                @Html.DisplayNameFor(model => model.Control_de_Balon)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Control_de_Balon)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Anotacion)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Anotacion)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Barrida)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Barrida)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Centros)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Centros)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Defensa)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Defensa)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Marcaje)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Marcaje)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Carcateristica1)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Carcateristica1)
+            </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.Carcateristica2)
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Carcateristica2)
+            </dd>
+
+        </dl>
+    </div>
+
+    <div class="col-md-6">
+        <dt>
+            @Html.DisplayNameFor(model => model.Foto)
+        </dt>
+        <dd>
+            <img src="@Model.Foto" style="height:500px" />
+          
+        </dd>
+
+
+
+
+    </div>
+
+
+
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="ID" />
+    <input type="submit" value="Eliminar" class="btn btn-default" /> |
+    <a asp-action="Index">Volver a la Lista</a>
+</form> 

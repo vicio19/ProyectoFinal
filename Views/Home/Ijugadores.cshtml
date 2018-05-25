@@ -1,0 +1,45 @@
+﻿
+
+@model IEnumerable<ProyectoFinal.Models.Jugador>
+
+@{
+    ViewData["Title"] = "Pagina de Inicio";
+}
+
+
+
+<center><h3>LISTA DE JUGADORES</h3></center>
+<br />
+
+
+
+@if (Model.Count() > 0)
+{
+
+
+
+
+
+@foreach (var item in Model)
+{
+
+    <div style="float:left; margin: 10px 15px 10px 15px; ">
+        <img src="@item.Foto" style="height:200px; cursor:pointer" onclick="location.href='@Url.Action("Details", "Jugadors")?id=@item.ID'" />
+        <br />
+        
+        <a onclick = "location.href='@Url.Action("Details", "Jugadors")?id=@item.ID'" style="cursor:pointer">@item.Nombres</a>
+    </div>
+
+
+
+
+
+}
+
+<div style="clear:both"></div>
+}
+else
+{ 
+    <h1>No contine ningun resultado</h1>
+
+}
